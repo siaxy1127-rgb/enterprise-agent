@@ -44,48 +44,10 @@ The system combines **Large Language Models (LLM), Retrieval-Augmented Generatio
 
 
 ```
-                    User
-                      |
-                      v
-
-              Streamlit Web UI
-
-                      |
-                      v
-
-                 FastAPI API
-
-                      |
-                      v
-
-            LangGraph Agent
-
-                      |
-          +-----------+-----------+
-          |                       |
-          v                       v
-
-        LLM              Knowledge Tool
-
-                                  |
-                                  v
-
-                         Vector Search
-
-                                  |
-                                  v
-
-                              ChromaDB
-
-                                  |
-                                  v
-
-                       Enterprise Documents
-
+                   ![Architecture](docs/architecture.png)
 ```
 
 
----
 
 # 🔄 Agent Workflow
 
@@ -159,44 +121,59 @@ enterprise-agent/
 │
 ├── app/
 │
-│── agent/
-│   ├── agent.py              # LangGraph Agent workflow
-│   └── tools.py              # Agent tools
+├── agent/
+│ ├── init.py
+│ ├── agent.py # LangGraph ReAct Agent workflow
+│ └── tools.py # Agent tools (knowledge search)
 │
-│── rag/
-│   ├── loader.py             # Document loading
-│   ├── splitter.py            # Text splitting
-│   ├── pipeline.py            # RAG pipeline
-│   └── vectorstore.py         # ChromaDB management
+├── rag/
+│ ├── init.py
+│ ├── loader.py # Document loading
+│ ├── splitter.py # Text chunking
+│ ├── pipeline.py # RAG pipeline
+│ └── vectorstore.py # ChromaDB vector database
 │
-│── api/
-│   ├── chat.py                # Chat API
-│   ├── upload.py              # Upload API
-│   └── routes.py
+├── api/
+│ ├── init.py
+│ ├── chat.py # Chat API endpoint
+│ ├── upload.py # Document upload API
+│ └── routes.py # API routing
 │
-│── core/
-│   └── config.py              # Application configuration
+├── core/
+│ ├── init.py
+│ └── config.py # Application configuration
 │
-│── services/
+├── services/
+│ └── init.py # Business services
 │
-│── utils/
+├── utils/
+│ └── init.py # Utility functions
 │
 ├── frontend/
-│   └── streamlit_app.py       # Web interface
+│ └── streamlit_app.py # Streamlit Web UI
 │
 ├── data/
-│   └── company.txt            # Example knowledge document
+│ └── company.txt # Example enterprise knowledge document
 │
-├── requirements.txt
+├── docs/
+│ ├── architecture.png # System architecture diagram
+│ └── chat-ui.png # Web UI screenshot
+│
+├── requirements.txt # Python dependencies
+│
+├── .gitignore
 │
 └── README.md
-
 ```
 
 
 ---
 
 # 📸 Demo
+
+![Chat UI](docs/chat-ui.png)
+
+
 
 
 ## Streamlit Interface
