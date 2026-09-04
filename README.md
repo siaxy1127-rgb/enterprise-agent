@@ -43,9 +43,7 @@ The system combines **Large Language Models (LLM), Retrieval-Augmented Generatio
 # 🏗️ System Architecture
 
 
-```
                    ![Architecture](docs/Architecture.png)
-```
 
 
 
