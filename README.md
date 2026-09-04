@@ -44,6 +44,13 @@ The system combines **Large Language Models (LLM), Retrieval-Augmented Generatio
 
 ---
 
+# 📸 Demo
+
+The Streamlit interface allows users to ask questions and receive answers with retrieved document references.
+
+![Chat UI](docs/chat-ui.png)
+
+
 # 🏗️ System Architecture
 
 
@@ -179,12 +186,6 @@ enterprise-agent/
 
 
 ---
-
-# 📸 Demo
-
-The Streamlit interface allows users to ask questions and receive answers with retrieved document references.
-
-![Chat UI](docs/chat-ui.png)
 
 
 # ⚙️ Installation
